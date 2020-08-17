@@ -10,7 +10,7 @@ all_regions = client.describe_regions()
 #CSV creation and write data to CSV
 csv_ob=open("/etc/ansible/447721165257/447721165257/roles/vpcsubinventory/files/VPC-Inventory.csv","w",newline='')
 csv_w=csv.writer(csv_ob)
-csv_w.writerow(['VPC ID','VPC CIDR','Region','VPC State','Subnet','Subnet CIDR','Availability Zone','Owner ID'])
+csv_w.writerow(['VPC ID','VPC CIDR','Region','VPC State','Subnet','Subnet CIDR','Availability Zone','Account ID'])
 
 #Fetching AWS regional list from AWS
 list_regions = []
