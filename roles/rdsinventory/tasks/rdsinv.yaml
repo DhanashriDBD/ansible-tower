@@ -8,7 +8,8 @@
   tasks:
    - name: execute python script
      #command: chmod +x etc/ansible/inventory/csvtocsv.py
-     shell: python3 /etc/ansible/447721165257/447721165257/roles/rdsinventory/files/rds-inv.py
+     script: files/rds-inv.py
+     #shell: python3 /etc/ansible/447721165257/447721165257/roles/rdsinventory/files/rds-inv.py
 
    - name: Ensure recepient email identity exists
      aws_ses_identity:
@@ -22,4 +23,5 @@
      register: sendyes
    - name: Send email with attachment based on conditions
      when: sendyes and recyes
-     shell: python3 /etc/ansible/447721165257/447721165257/roles/rdsinventory/files/send-mail.py
+     script: files/send-mail.py
+     #shell: python3 /etc/ansible/447721165257/447721165257/roles/rdsinventory/files/send-mail.py

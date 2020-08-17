@@ -1,11 +1,7 @@
 ---
-- name: Ansible Test Playbook
-  #hosts: aws_region_us_east_2
-  hosts: localhost
+- hosts: localhost
   connection: local
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
   roles:
-   - {role: e2inventory}
-   - {role: rdsinventory}
-   - {role: vpcsubinventory} 
+    - {role: ec2inventory}
+    - {role: rdsinventory}
+    - {role: vpcsubinventory}  
