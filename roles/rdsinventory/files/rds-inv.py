@@ -10,7 +10,7 @@ all_regions = client.describe_regions()
 #CSV creation and write data to CSV
 csv_ob=open("RDS-Inventory.csv","w",newline='')
 csv_w=csv.writer(csv_ob)
-csv_w.writerow(['DB Name','DB Engine','Region','Instance Type','State','Endpoint','Vpc ID','Subnet ID'])
+csv_w.writerow(['DB Name','DB Engine','Region','Instance Type','State','Endpoint','Vpc ID','Subnet ID','Account ID'])
 
 #Fetching AWS regional list from AWS
 list_regions = []
@@ -27,6 +27,7 @@ for each_reg in list_regions:
     for each_item in response:
         csv_w.writerow([each_item['DBInstanceIdentifier'],each_item['Engine'],each_item['AvailabilityZone'],
         each_item['DBInstanceClass'],each_item['DBInstanceStatus'], each_item['Endpoint']['Address'],
-        each_item['DBSubnetGroup']['VpcId'],each_item['DBSubnetGroup']['DBSubnetGroupName']
+        each_item['DBSubnetGroup']['VpcId'],each_item['DBSubnetGroup']['DBSubnetGroupName'],
+        each_item['DBInstanceArn'].split(":")[4]
         ])
 csv_ob.close()
