@@ -1,0 +1,9 @@
+---
+- name: Ansible Test Playbook
+  #hosts: aws_region_us_east_2
+  hosts: localhost
+  connection: local
+  roles:
+   - {role: ec2inventory}
+   - {role: rdsinventory}
+   - {role: vpcsubinventory}

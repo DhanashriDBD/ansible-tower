@@ -1,0 +1,33 @@
+import boto3
+import csv
+
+# AWS connection with Boto
+session     = boto3.Session(profile_name='default', region_name='us-east-2')
+client      = session.client(service_name='ec2')
+all_regions = client.describe_regions()
+
+#print(all_regions['Regions'])
+
+#CSV creation and write data to CSV
+csv_ob=open("/etc/ansible/447721165257/roles/ec2inventory/files/EC2-Inventory.csv","w",newline='')
+csv_w=csv.writer(csv_ob)
+csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID'])
+
+#Fetching AWS regional list from AWS
+list_regions = []
+for each_reg in all_regions['Regions']:
+    #print(each_reg['RegionName'])
+    list_regions.append(each_reg['RegionName'])
+#print(list_regions)
+
+#Fetching AWS EC2 instance list along with some data
+for each_reg in list_regions:
+    session=boto3.Session(profile_name='default', region_name=each_reg)
+    resource=session.resource(service_name='ec2')
+    for each_item in resource.instances.all():
+        #print(dir(each_item[resource]))
+        csv_w.writerow([each_item.id,each_item.placement['AvailabilityZone'],each_item.instance_type,each_item.state['Name'], each_item.private_ip_address,
+        each_item.public_ip_address, each_item.vpc.id, each_item.subnet.id])
+csv_ob.close()
+
+
