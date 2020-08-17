@@ -1,2 +1,0 @@
-DB Name,DB Engine,Region,Instance Type,State,Endpoint,Vpc ID,Subnet ID
-database-1,sqlserver-ex,us-east-2b,db.t2.micro,stopped,database-1.chqqs0md7xnr.us-east-2.rds.amazonaws.com,vpc-9cfa24f7,default-vpc-9cfa24f7

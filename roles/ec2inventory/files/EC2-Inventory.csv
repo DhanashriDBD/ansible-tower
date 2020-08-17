@@ -1,5 +1,0 @@
-Instance ID,Region,Instance Type,State,Private IP,Public IP,Vpc ID,Subnet ID,Account ID
-i-08f752015222c580f,ap-south-1a,t2.micro,stopped,172.31.34.31,NA,vpc-33abb35b,subnet-8a8b8ae2,447721165257
-i-0e76b5fe36a7bbbfa,ap-south-1b,t2.micro,stopped,172.31.6.12,NA,vpc-33abb35b,subnet-7f582e33,447721165257
-i-05e4b6c9770143b8e,us-east-2b,t2.micro,running,172.31.21.214,3.129.68.23,vpc-9cfa24f7,subnet-c7b18dbd,447721165257
-i-07d34991f975c7227,us-east-2a,t2.micro,stopped,172.31.13.242,NA,vpc-9cfa24f7,subnet-950bcdfe,447721165257

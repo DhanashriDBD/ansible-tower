@@ -8,7 +8,7 @@ all_regions = client.describe_regions()
 #print(all_regions['Regions'])
 
 #CSV creation and write data to CSV
-csv_ob=open("/etc/ansible/447721165257/447721165257/roles/vpcsubinventory/files/VPC-Inventory.csv","w",newline='')
+csv_ob=open("VPC-Inventory.csv","w",newline='')
 csv_w=csv.writer(csv_ob)
 csv_w.writerow(['VPC ID','VPC CIDR','Region','VPC State','Subnet','Subnet CIDR','Availability Zone','Account ID'])
 

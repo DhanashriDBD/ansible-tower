@@ -1,7 +1,0 @@
-VPC ID,VPC CIDR,Region,VPC State,Subnet,Subnet CIDR,Availability Zone,Account ID
-vpc-33abb35b,172.31.0.0/16,ap-south-1,available,subnet-25df675e,172.31.16.0/20,ap-south-1c,447721165257
-vpc-33abb35b,172.31.0.0/16,ap-south-1,available,subnet-7f582e33,172.31.0.0/20,ap-south-1b,447721165257
-vpc-33abb35b,172.31.0.0/16,ap-south-1,available,subnet-8a8b8ae2,172.31.32.0/20,ap-south-1a,447721165257
-vpc-9cfa24f7,172.31.0.0/16,us-east-2,available,subnet-950bcdfe,172.31.0.0/20,us-east-2a,447721165257
-vpc-9cfa24f7,172.31.0.0/16,us-east-2,available,subnet-c7b18dbd,172.31.16.0/20,us-east-2b,447721165257
-vpc-9cfa24f7,172.31.0.0/16,us-east-2,available,subnet-f51572b9,172.31.32.0/20,us-east-2c,447721165257

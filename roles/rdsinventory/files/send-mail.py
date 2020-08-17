@@ -21,7 +21,7 @@ attachment_string = ''
 if attachment_string:   # if bytestring available
     part = MIMEApplication(str.encode('attachment_string'))
 else:
-    part = MIMEApplication(open('/etc/ansible/447721165257/447721165257/roles/rdsinventory/files/RDS-Inventory.csv', 'rb').read())
+    part = MIMEApplication(open('RDS-Inventory.csv', 'rb').read())
     print(part)
 part.add_header('Content-Disposition', 'attachment', filename='RDS-Inventory.csv')
 message.attach(part)
