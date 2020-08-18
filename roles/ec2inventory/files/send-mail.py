@@ -12,7 +12,7 @@ client = boto3.client(
 message = MIMEMultipart()
 message['Subject'] = 'Ec2 Dynamic Inventory is updated'
 message['From'] = 'dhanashree.dbfree@gmail.com'
-message['To'] = ', '.join(['dhanashree.dbfree@gmail.com','dhanashree.dhamgunde@zensar.com'])
+message['To'] = ', '.join(['dhanashree.dbfree@gmail.com'])
 
 #message body
 part = MIMEText('Dear Receiver, this is to inform you that AWS Ec2 inventory has been updated.Please find attached updated inventory', 'html')
