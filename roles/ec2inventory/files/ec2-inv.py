@@ -9,7 +9,7 @@ all_regions = client.describe_regions()
 #print(all_regions['Regions'])
 
 #CSV creation and write data to CSV
-csv_ob=open("EC2-Inventory.csv","w",newline='')
+csv_ob=open("EC2-Inventory.csv","w")
 csv_w=csv.writer(csv_ob)
 csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID','Account ID'])
 
