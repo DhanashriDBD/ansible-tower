@@ -3,5 +3,3 @@
   connection: local
   roles:
     - {role: ec2inventory}
-    - {role: rdsinventory}
-    - {role: vpcsubinventory}  
