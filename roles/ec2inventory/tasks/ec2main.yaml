@@ -3,6 +3,8 @@
   #hosts: aws_region_us_east_2
   hosts: localhost
   connection: local
+  roles:
+    - role: main.yaml
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
