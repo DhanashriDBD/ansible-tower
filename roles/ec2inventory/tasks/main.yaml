@@ -1,8 +1,5 @@
 ---
-#- name: Ansible Test Playbook
-  #tasks:
 - name: execute python script
-  remote_user: centos
   sudo: true
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
@@ -17,4 +14,3 @@
   when: sendyes
   script: files/send-mail.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
-
