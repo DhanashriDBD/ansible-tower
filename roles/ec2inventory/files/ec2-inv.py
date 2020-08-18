@@ -21,8 +21,7 @@ for each_reg in all_regions['Regions']:
 
 count=1
 for each_reg in list_regions:
-    connection=boto3.session.Session(profile_name='default',region_name=each_reg)
-    ec2_cli=connection.client('ec2')
+    ec2_cli = boto3.client('ec2',region_name=each_reg)
     response=ec2_cli.describe_instances()['Reservations']
     for each_item in response:
         for instances in each_item['Instances']:
