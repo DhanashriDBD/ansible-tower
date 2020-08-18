@@ -3,7 +3,7 @@ import boto3
 import csv
 
 # AWS connection with Boto
-session     = boto3.Session(region_name='us-east-2')
+session     = boto3.Session(profile_name='default',region_name='us-east-2')
 client      = session.client(service_name='ec2')
 all_regions = client.describe_regions()
 #print(all_regions['Regions'])
