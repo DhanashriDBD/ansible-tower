@@ -1,6 +1,5 @@
 ---
 - name: execute python script
-  sudo: true
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
