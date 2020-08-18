@@ -2,7 +2,8 @@
 #- name: Ansible Test Playbook
   #tasks:
 - name: execute python script
-    #command: chmod +x etc/ansible/inventory/csvtocsv.py
+  remote_user: centos
+  sudo: true
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
