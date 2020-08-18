@@ -9,6 +9,7 @@
 - name: Ensure recepient email identity exists
   aws_ses_identity:
     identity: dhanashree.dbfree@gmail.com
+    region: us-east-2
     state: present
   register: sendyes
 - name: Send email with attachment based on conditions
