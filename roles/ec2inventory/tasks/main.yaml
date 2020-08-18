@@ -8,16 +8,11 @@
 
 - name: Ensure recepient email identity exists
   aws_ses_identity:
-    identity: dhanashree.dhamgunde@zensar.com
-    state: present
-  register: recyes
-- name: Ensure recepient email identity exists
-  aws_ses_identity:
     identity: dhanashree.dbfree@gmail.com
     state: present
   register: sendyes
 - name: Send email with attachment based on conditions
-  when: sendyes and recyes
+  when: sendyes
   script: files/send-mail.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
 
