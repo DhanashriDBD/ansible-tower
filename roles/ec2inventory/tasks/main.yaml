@@ -1,12 +1,5 @@
 ---
 - name: Ansible Test Playbook
-  #hosts: aws_region_us_east_2
-  hosts: localhost
-  connection: local
-  roles:
-    - role: release.yaml
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
   tasks:
    - name: execute python script
      #command: chmod +x etc/ansible/inventory/csvtocsv.py
