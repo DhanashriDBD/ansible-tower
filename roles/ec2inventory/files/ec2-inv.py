@@ -3,9 +3,8 @@ import boto3
 import csv
 
 # AWS connection with Boto
-session     = boto3.Session(profile_name='default',region_name='us-east-2')
-client      = session.client(service_name='ec2')
-all_regions = client.describe_regions()
+ec2_cli = boto3.client('ec2')
+all_regions = ec2_cli.describe_regions()
 #print(all_regions['Regions'])
 
 #CSV creation and write data to CSV
