@@ -2,6 +2,6 @@
 - hosts: localhost
   connection: local
   roles:
-    - {role: ec2inventory}
-    - {role: rdsinventory}
-    - {role: vpcsubinventory}  
+    - {role: roles/ec2inventory}
+    - {role: roles/rdsinventory}
+    - {role: roles/vpcsubinventory}  
