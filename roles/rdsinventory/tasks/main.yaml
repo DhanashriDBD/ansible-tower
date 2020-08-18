@@ -4,7 +4,7 @@
   hosts: localhost
   connection: local
   roles:
-    - role: 'main.yaml'
+    - role: release.yaml
   vars:
     ansible_python_interpreter: /usr/bin/python3
   tasks:
