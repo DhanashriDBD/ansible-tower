@@ -3,7 +3,9 @@
   #tasks:
 - name: execute python script
     #command: chmod +x etc/ansible/inventory/csvtocsv.py
-  script: sudo files/ec2-inv.py
+  become: true
+  become_method: su
+  script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
 - name: Ensure recepient email identity exists
@@ -14,5 +16,7 @@
   register: sendyes
 - name: Send email with attachment based on conditions
   when: sendyes
-  script: sudo files/send-mail.py
+  become: true
+  become_method: su
+  script: files/send-mail.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
