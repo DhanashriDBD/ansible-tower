@@ -4,7 +4,7 @@
   become: true
   become_user: centos
   args:
-    chdir: cd /etc/ansible/aws-inventory/ec2-inventory
+    chdir: /etc/ansible/aws-inventory/ec2-inventory
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
