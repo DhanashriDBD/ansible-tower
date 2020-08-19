@@ -8,7 +8,7 @@ all_regions = ec2_cli.describe_regions()
 #print(all_regions['Regions'])
 
 #CSV creation and write data to CSV
-csv_ob=open("/ec2-inventory/EC2-Inventory.csv","w",newline='')
+csv_ob=open("/etc/ansible/aws-inventory/ec2-inventory/EC2-Inventory.csv","w",newline='')
 csv_w=csv.writ/home/centos/inventoryer(csv_ob)
 csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID','Account ID'])
 
