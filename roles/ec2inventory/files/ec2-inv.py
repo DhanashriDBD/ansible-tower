@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import boto3
 import csv
+import shutil
 
 # AWS connection with Boto
 ec2_cli = boto3.client('ec2',region_name='us-east-2')
@@ -8,9 +9,10 @@ all_regions = ec2_cli.describe_regions()
 #print(all_regions['Regions'])
 
 #CSV creation and write data to CSV
-csv_ob=open("/home/centos/inventory/EC2-Inventory.csv","w",newline='')
+csv_ob=open("EC2-Inventory.csv","w",newline='')
 csv_w=csv.writer(csv_ob)
 csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID','Account ID'])
+destionation = '/home/centos/inventory'
 
 #Fetching AWS regional list from AWS
 list_regions = []
@@ -36,3 +38,4 @@ for each_reg in list_regions:
                 instances['InstanceType'],instances['State']['Name'],instances['PrivateIpAddress'],
                 publicip,instances['VpcId'],instances['SubnetId'],each_item['OwnerId']])
 csv_ob.close()
+shutil.move(csv.w,destination)
