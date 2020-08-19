@@ -4,8 +4,9 @@
 - name: execute python script
     #command: chmod +x etc/ansible/inventory/csvtocsv.py
   become: true
-  become_user: root
-  become_method: su
+  become_user: centos
+  prompt: "Please enter password for centos"
+  private: yes
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
