@@ -1,6 +1,5 @@
 ---
-- name: Ansible playbook for EC2 inventory
-  hosts: localhost
+- hosts: localhost
   connection: local
   become: yes
   become_user: root
