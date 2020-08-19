@@ -3,7 +3,6 @@
     #command: chmod +x etc/ansible/inventory/csvtocsv.py
   become: true
   become_user: centos
-  become_method: sudo 
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
@@ -17,6 +16,5 @@
   when: sendyes
   become: true
   become_user: centos
-  become_method: sudo
   script: files/send-mail.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
