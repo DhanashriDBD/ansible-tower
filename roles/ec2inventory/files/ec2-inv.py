@@ -12,7 +12,7 @@ all_regions = ec2_cli.describe_regions()
 csv_ob=open("EC2-Inventory.csv","w",newline='')
 csv_w=csv.writer(csv_ob)
 csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID','Account ID'])
-destionation = '/home/centos/inventory'
+#destionation = '/home/centos/inventory'
 
 #Fetching AWS regional list from AWS
 list_regions = []
@@ -38,4 +38,4 @@ for each_reg in list_regions:
                 instances['InstanceType'],instances['State']['Name'],instances['PrivateIpAddress'],
                 publicip,instances['VpcId'],instances['SubnetId'],each_item['OwnerId']])
 csv_ob.close()
-shutil.move(csv.w,destination)
+#shutil.move(csv.w,destination)
