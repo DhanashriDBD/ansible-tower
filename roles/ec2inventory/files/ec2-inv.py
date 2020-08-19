@@ -9,7 +9,7 @@ all_regions = ec2_cli.describe_regions()
 
 #CSV creation and write data to CSV
 csv_ob=open("/home/centos/inventory/EC2-Inventory.csv","w",newline='')
-csv_w=csv.writ/home/centos/inventoryer(csv_ob)
+csv_w=csv.writer(csv_ob)
 csv_w.writerow(['Instance ID','Region','Instance Type','State','Private IP','Public IP','Vpc ID','Subnet ID','Account ID'])
 
 #Fetching AWS regional list from AWS
