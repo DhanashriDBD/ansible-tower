@@ -2,7 +2,7 @@
 - name: execute python script
     #command: chmod +x etc/ansible/inventory/csvtocsv.py
   become: true
-  become_user: centos
+  become_user: root
   script: files/ec2-inv.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
 
@@ -15,6 +15,6 @@
 - name: Send email with attachment based on conditions
   when: sendyes
   become: true
-  become_user: centos
+  become_user: root
   script: files/send-mail.py
      #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
