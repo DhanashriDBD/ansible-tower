@@ -1,24 +1,21 @@
 ---
-#- name: Ansible Test Playbook
-  #tasks:
-- name: execute python script
-    #command: chmod +x etc/ansible/inventory/csvtocsv.py
-  become: true
-  become_user: centos
-  prompt: "Please enter password for centos"
-  private: yes
-  script: files/ec2-inv.py
-     #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/ec2-inv.py
-
-- name: Ensure recepient email identity exists
-  aws_ses_identity:
-    identity: dhanashree.dbfree@gmail.com
-    region: us-east-2
-    state: present
-  register: sendyes
-- name: Send email with attachment based on conditions
-  when: sendyes
-  become: true
-  become_method: su
-  script: files/send-mail.py
-     #shell: python3 /etc/ansible/447721165257/447721165257/roles/ec2inventory/files/send-mail.py
+- name: Ansible playbook for EC2 inventory
+  hosts: localhost
+  connection: local
+  become: yes
+  become_user: root
+  vars_prompt:
+    - name: "Enter password for Centos user"
+      prompt: "Enter password"
+      private: yes
+  tasks:
+    - name: Execute Python script for fetching and generating inventory
+      script: files/ec2-inv.py
+    - name: Ensure recepient email identity exists
+      aws_ses_identity:
+        identity: dhanashree.dbfree@gmail.com
+        region: us-east-2
+        state: present
+      register: sendyes
+    - name: Execute Python script for fetching and generating inventory
+      script: files/ec2-inv.py
